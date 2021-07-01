@@ -1,5 +1,5 @@
 const ip_url = "http://ip-api.com/json/";
-const lang_url = "https://fourtonfish.com/hellosalut/?lang=LANGUAGECODE&ip=IPADDRESS";
+const lang_url = "https://fourtonfish.com/hellosalut/?ip=";
 const welcome = document.querySelector("#welcome");
 
 function decodeHtml(html) {
@@ -9,9 +9,8 @@ function decodeHtml(html) {
 }
 
 axios.get(ip_url).then((response) => {
-  code = response.data.countryCode.toLowerCase();
   ip = response.data.query;
-  axios.get(`https://fourtonfish.com/hellosalut/?lang=${code}&ip=${ip}`).then((response) => {
+  axios.get(lang_url + ip).then((response) => {
     hello = response.data.hello;
     welcome.innerText = decodeHtml(hello);
   });
