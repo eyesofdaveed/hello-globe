@@ -9,8 +9,7 @@ function decodeHtml(html) {
 }
 
 axios.get(ip_url).then((response) => {
-/*   code = response.data.countryCode.toLowerCase(); */
-  code = "ru";
+  code = response.data.countryCode.toLowerCase();
   ip = response.data.query;
   axios.get(`https://fourtonfish.com/hellosalut/?lang=${code}&ip=${ip}`).then((response) => {
     hello = response.data.hello;
