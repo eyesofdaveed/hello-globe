@@ -1,4 +1,4 @@
-const ip_url = "http://ip-api.com/json/";
+const ip_url = "https://ip-api.com/json/";
 const lang_url = "https://fourtonfish.com/hellosalut/?ip=";
 const welcome = document.querySelector("#welcome");
 
